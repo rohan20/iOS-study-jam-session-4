@@ -35,6 +35,13 @@ class ViewController: UITableViewController {
         return cell
     }
     
+    @IBAction func addNewItemToList(){
+        articles.append(Article(name: "New Item", price: 200))
+        let lastRow = tableView.numberOfRows(inSection: 0)
+        let indexPath = IndexPath(row: lastRow, section: 0)
+        tableView.insertRows(at: [indexPath], with: .automatic)
+    }
+    
     lazy var priceFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency

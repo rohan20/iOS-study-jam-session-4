@@ -47,7 +47,13 @@
                             <outlet property="delegate" destination="bm0-p9-aMS" id="R4M-iQ-7NW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="B5o-pb-44L"/>
+                    <navigationItem key="navigationItem" id="B5o-pb-44L">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="LNm-ob-qQ4">
+                            <connections>
+                                <action selector="addNewItemToList" destination="bm0-p9-aMS" id="dJP-sR-2CO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tdk-3W-GLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
