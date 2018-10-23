@@ -31,9 +31,16 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath)
         let article = articles[indexPath.row]
         cell.textLabel?.text = article.name
-        cell.detailTextLabel?.text = "\(article.price)"
+        cell.detailTextLabel?.text = priceFormatter.string(for: Double(article.price))
         return cell
     }
+    
+    lazy var priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.multiplier = 0.01
+        return formatter
+    }()
 }
 
 struct Article {
