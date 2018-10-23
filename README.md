@@ -11,3 +11,7 @@ iOS Study Jam organised by WTM Berlin (Session 4)
 #### Formatted prices
 
 <img src="https://github.com/rohan20/iOS-study-jam-session-4/blob/master/formatted_currency_dollar.png" height="500"> <img src="https://github.com/rohan20/iOS-study-jam-session-4/blob/master/formatted_currency_euro.png" height="500">
+
+#### Swipe to delete
+
+<img src="https://github.com/rohan20/iOS-study-jam-session-4/blob/master/delete_item_from_list.png" height="500">
