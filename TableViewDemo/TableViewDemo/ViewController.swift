@@ -15,6 +15,10 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+}
 
+struct Article {
+    let name: String
+    let price: Int
 }
 
