@@ -36,19 +36,12 @@ class ViewController: UITableViewController {
     }
     
     @IBAction func addNewItemToList(){
-        articles.append(Article(name: "New Item", price: 200))
+        articles.append(createRandomArticle())
         let lastRow = tableView.numberOfRows(inSection: 0)
         let indexPath = IndexPath(row: lastRow, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
-    
-    lazy var priceFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.multiplier = 0.01
-        return formatter
-    }()
-    
+  
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -58,6 +51,22 @@ class ViewController: UITableViewController {
             articles.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+    }
+    
+    lazy var priceFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.multiplier = 0.01
+        return formatter
+    }()
+    
+    
+    func createRandomArticle() -> Article {
+        let adjectives = ["autumn", "hidden", "bitter", "misty", "silent", "empty", "dry", "dark", "summer", "icy", "delicate", "quiet", "white", "cool", "spring", "winter", "patient", "twilight", "dawn", "crimson", "wispy", "weathered", "blue", "billowing", "broken", "cold", "damp", "falling", "frosty", "green", "long", "late", "lingering", "bold", "little", "morning", "muddy", "old", "red", "rough", "still", "small", "sparkling", "throbbing", "shy", "wandering", "withered", "wild", "black", "young", "holy", "solitary", "fragrant", "aged", "snowy", "proud", "floral", "restless", "divine", "polished", "ancient", "purple", "lively", "nameless"]
+        let nouns = ["waterfall", "river", "breeze", "moon", "rain", "wind", "sea", "morning", "snow", "lake", "sunset", "pine", "shadow", "leaf", "dawn", "glitter", "forest", "hill", "cloud", "meadow", "sun", "glade", "bird", "brook", "butterfly", "bush", "dew", "dust", "field", "fire", "flower", "firefly", "feather", "grass", "haze", "mountain", "night", "pond", "darkness", "snowflake", "silence", "sound", "sky", "shape", "surf", "thunder", "violet", "water", "wildflower", "wave", "water", "resonance", "sun", "wood", "dream", "cherry", "tree", "fog", "frost", "voice", "paper", "frog", "smoke", "star"]
+        let name = adjectives.randomElement()! + " " + nouns.randomElement()!
+        let price = (50...10000).randomElement()!
+        return Article(name: name, price: price)
     }
 }
 
