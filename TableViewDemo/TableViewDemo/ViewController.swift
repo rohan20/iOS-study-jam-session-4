@@ -15,7 +15,7 @@ class ViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    let articles = [
+    var articles = [
         Article(name: "Adidas Shoes", price: 10000),
         Article(name: "Nike Bag", price: 15000),
         Article(name: "Zalando Tshirt", price: 8000),
@@ -41,6 +41,17 @@ class ViewController: UITableViewController {
         formatter.multiplier = 0.01
         return formatter
     }()
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if(editingStyle == .delete){
+            articles.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
 }
 
 struct Article {
