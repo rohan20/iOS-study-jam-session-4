@@ -19,3 +19,7 @@ iOS Study Jam organised by WTM Berlin (Session 4)
 #### Add static item to the list
 
 <img src="https://github.com/rohan20/iOS-study-jam-session-4/blob/master/add_static_item.png" height="500">
+
+#### Add random item to the list
+
+<img src="https://github.com/rohan20/iOS-study-jam-session-4/blob/master/add_random_item.png" height="500">
